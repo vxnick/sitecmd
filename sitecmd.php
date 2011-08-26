@@ -543,19 +543,22 @@ class sitecmd
 
 	public static function getVersion()
 	{
-		$flourish_file = 'upstream'.DIRECTORY_SEPARATOR.'flourish'.
-			DIRECTORY_SEPARATOR.'classes'.DIRECTORY_SEPARATOR.'flourish.rev';
+		$flourish_file = self::$attr['paths']['sitecmd'].DIRECTORY_SEPARATOR.
+			'flourish'.DIRECTORY_SEPARATOR.'classes'.
+			DIRECTORY_SEPARATOR.'flourish.rev';
 
 		if (file_exists($flourish_file))
 		{
-			self::$flourish_rev = file_get_contents($flourish_file);
+			$flourish_rev = file_get_contents($flourish_file);
+			$flourish_rev = preg_match('#(r[0-9]+)#', $flourish_rev, $matches);
 		}
 
 		$out = 'sitecmd '.self::$version;
 
-		if (self::$flourish_rev !== NULL)
+		if (isset($flourish_rev) && isset($matches))
 		{
-			$out .= '<br />Flourish '.self::$flourish_rev;
+			$out .= '<br />Flourish '.$matches[1];
+			self::$flourish_rev = $matches[1];
 		}
 
 		return self::_($out);

@@ -1,8 +1,7 @@
 <?php
 
 /**
- * If this file is confusing, please take a look at the quick-start video
- * tutorial at http://www.sitecmd.com/docs/setup
+ * This file is documented at http://www.sitecmd.com/docs/env-file
  */
 
 $environment = array
