@@ -13,7 +13,7 @@
 
 class sitecmd
 {
-	public static $version      = '2.0.0';
+	public static $version      = '2.0.1';
 	public static $flourish_rev = NULL;
 	public static $timer        = 0;
 	public static $sapi         = PHP_SAPI;
