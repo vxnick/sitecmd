@@ -130,6 +130,20 @@ $environment = array
          'mail' => array(),
     ),
     /**
+     * Optional settings for controlling Flourish.
+     */
+    'flourish' => array
+    (
+        /**
+         * How to load the Flourish libraries.
+         *
+         * Valid values are 'eager' or 'lazy', with NULL representing 'best'.
+         *
+         * See: http://flourishlib.com/docs/fLoader
+         */
+        'loader' => NULL,
+    ),
+    /**
      * Set these values if you would like to send mail through a remote mail
      * server.
      *

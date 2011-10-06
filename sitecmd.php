@@ -8,12 +8,12 @@
  * @package   Sitecmd
  * @link      http://www.sitecmd.com/
  *
- * @version   2.0.0
+ * @version   2.1.0
  */
 
 class sitecmd
 {
-	public static $version      = '2.0.1';
+	public static $version      = '2.1.0';
 	public static $flourish_rev = NULL;
 	public static $timer        = 0;
 	public static $sapi         = PHP_SAPI;
@@ -46,7 +46,23 @@ class sitecmd
 			exit(2); // No such file or directory
 		}
 
-		spl_autoload_register(array(__CLASS__, 'initFlourish'));
+		include $flourish_path.DIRECTORY_SEPARATOR.'classes'.
+			DIRECTORY_SEPARATOR.'fLoader.php';
+
+		// Check for a specific loader type
+		switch (self::$attr['flourish']['loader'])
+		{
+			case 'eager':
+				fLoader::eager();
+			break;
+
+			case 'lazy':
+				fLoader::lazy();
+			break;
+
+			default:
+				fLoader::best();
+		}
 
 		// Check for compatible PHP version
 		if (!fCore::checkVersion('5.1'))
@@ -93,13 +109,6 @@ class sitecmd
 		}
 
 		return $content;
-	}
-
-	private static function initFlourish($class)
-	{
-		require self::$attr['paths']['sitecmd'].DIRECTORY_SEPARATOR.
-			'flourish'.DIRECTORY_SEPARATOR.'classes'.
-			DIRECTORY_SEPARATOR.$class.'.php';
 	}
 
 	private static function initEnvironment()
