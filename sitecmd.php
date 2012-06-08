@@ -1,14 +1,8 @@
 <?php
 
 /**
- * @copyright Copyright (c) 2009-2011 Nick Trew
- * @author    Nick Trew <nick@sitecmd.com>
- * @license   http://www.sitecmd.com/license
- *
- * @package   Sitecmd
- * @link      http://www.sitecmd.com/
- *
- * @version   2.1.0
+ * @copyright Copyright (c) 2009-2012 Nick Trew
+ * @author    Nick Trew <vxnick@gmail.com>
  */
 
 class sitecmd
