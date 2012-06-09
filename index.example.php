@@ -16,6 +16,10 @@ define('SITECMD_ENV_FILE', '');
 // The absolute path to 'sitecmd.php'
 require '';
 
+// The absolute path to your template directory (no trailing slash)
+$template_dir = '';
+
+
 // Run sitecmd and return the file contents
 $content = sitecmd::init();
 
@@ -37,9 +41,6 @@ $content = sitecmd::init();
 
 // Always useful to set
 fTimestamp::setDefaultTimezone('Europe/London');
-
-// The absolute path to your template directory (no trailing slash)
-$template_dir = '';
 
 // Create a template object
 $template = new fTemplating($template_dir);

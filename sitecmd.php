@@ -749,8 +749,6 @@ class sitecmd
 
 	/**
 	 * Create and return an internal URL.
-	 *
-	 * See http://www.sitecmd.com/docs/url
 	 */
 	public static function url($path, $ssl = NULL)
 	{

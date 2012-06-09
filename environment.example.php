@@ -1,9 +1,5 @@
 <?php
 
-/**
- * This file is documented at http://www.sitecmd.com/docs/env-file
- */
-
 $environment = array
 (
     'url' => array
@@ -52,8 +48,6 @@ $environment = array
          *
          * Routes listed below should be relative to your root URL, with no leading
          * or trailing slashes.
-         *
-         * See http://www.sitecmd.com/docs/url-routes for more information.
          */
         'routes' => array
         (
@@ -68,8 +62,6 @@ $environment = array
          * Note that this needs to point to the directory that contains the
          * PHP files that sitecmd will run. In most cases, this will be a
          * directory outside your public web directory.
-         *
-         * See http://www.sitecmd.com/docs/security for more information.
          */
         'root' => NULL,
         /**
@@ -77,8 +69,6 @@ $environment = array
          *
          * This file is included near the start of execution, and should
          * contain any event hooks that you wish to use.
-         *
-         * See http://www.sitecmd.com/docs/events for more information.
          */
         'events' => NULL,
     ),
@@ -90,8 +80,6 @@ $environment = array
          * See http://flourishlib.com/docs/fCore#ErrorExceptionHandling
          */
         'errors' => 'html',
-        /**
-         *
         /**
          * What error level to use throughout sitecmd.
          *
